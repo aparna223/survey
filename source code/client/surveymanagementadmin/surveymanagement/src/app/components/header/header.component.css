@@ -1,0 +1,36 @@
+.navbar{
+    background:lightyellow ;
+    color: #deb992;
+    justify-content: left;
+}
+.navbar-end{
+    position: fixed;
+    right: 0px;
+}
+.loginlink {
+    padding-left: 900px;
+}
+.list-inline-item >a{
+    color: #181817;
+    text-decoration: none;
+    list-style:none;
+}
+.user{
+    color:white;
+    background-color: black;
+}
+li{
+    list-style:none;
+}
+p{
+    color: #deb992;
+    /* font-size :40px;  */
+}
+button{
+    background-color: black;
+    color: #deb992;
+    border-style: none;
+}
+.dashboard{
+    text-align: left;
+}

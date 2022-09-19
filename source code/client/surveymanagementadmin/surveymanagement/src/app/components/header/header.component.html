@@ -1,0 +1,25 @@
+
+        <div class="navbar">
+            <div class="navbar-brand">
+                             
+            </div>
+            <div *ngIf="user" class="user">
+                <li><p class="dashboard">welcome {{user | uppercase}} </p></li>
+            </div>
+            <div *ngIf="!user" class="user" hidden>
+                <li hidden><p >welcome {{user}} </p></li>
+            </div>
+ 
+            <div class="loginlink">
+                <ul class="list-inline" >
+                    <li class="list-inline-item"><a routerLink="/dashboard">Home</a></li>
+                    <li class="list-inline-item"><a routerLink="/item">Item</a></li>
+                    <li class="list-inline-item"><a routerLink="/contacts">Contact</a></li>
+                    <li class="list-inline-item" *ngIf="!user"><a routerLink="/login">Login</a></li>
+                    <li class="list-inline-item" *ngIf="user"><button (click)="logout()" >Logout</button></li>
+                    <li class="list-inline-item" *ngIf="!user" hidden><button (click)="logout()" >Logout</button></li>
+
+                </ul>
+            </div>
+        </div>
+

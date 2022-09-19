@@ -1,0 +1,117 @@
+<!-- <html>
+
+<body class="loginbody">
+    <div *ngIf="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Please Enter username and password the field cannot be empty</strong>
+    </div>
+    
+    <div class="logincontainer">
+        <form [formGroup]='objloginform' >
+            <h1>Login</h1>
+            <div class="inputbox">
+                <input type="text" placeholder=" email" formControlName="email">
+                <div *ngIf="objloginform.controls['email'].touched">
+                    <div *ngIf="objloginform.controls['email']?.errors?.['required']" class="error">Email is required
+                    </div>
+                    <div *ngIf="objloginform.controls['email']?.errors?.['maxlength']" class="error">Maximum 10
+                        characters are allowed</div>
+                    <div *ngIf="objloginform.controls['email']?.errors?.['pattern']" class="error">val</div>
+                </div>
+
+            </div><br>
+            <div class="inputbox">
+                <input type="password" placeholder="Password" formControlName="password">
+                <div *ngIf="objloginform.controls['password'].touched">
+                    <div *ngIf="objloginform.controls['password']?.errors?.['required']" class="error">Password is
+                        required</div>
+                    <div *ngIf="objloginform.controls['password']?.errors?.['minlength']" class="error">Minimum 8
+                        characters are required</div>
+                    <div *ngIf="objloginform.controls['password']?.errors?.['pattern']" class="error">Enter valid data
+                    </div>
+                </div>
+
+            </div><br>
+            <div class="loginbutton">
+
+                <input type="submit" value="Login">
+            </div>
+            
+        </form>
+        <div class="wds-type--body text-section text-section--inherit style-scope wds-text-section">
+           Don’t have an account?
+            <em class="style-scope sm-login-page">
+                <a class="wcag-aaa style-scope sm-a" id="go-to-sign-up" href="#/sign-up"> Sign up</a></em><br>
+                
+                <mat-icon  aria-hidden="false" aria-label="Example home icon" fontIcon="home">home</mat-icon>
+                <mat-icon>facebook</mat-icon>
+               
+                
+        </div>
+    </div>
+
+</body>
+
+</html> -->
+
+<form [formGroup]='objloginform' >
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="login-container animated fadeInDown bootstrap snippets bootdeys">
+        <div class="loginbox bg-white">
+            <div class="loginbox-title">SIGN IN</div>
+            <div class="loginbox-social">
+                <div class="social-title ">Connect with Your Social Accounts</div>
+                <div class="social-buttons">
+                    <a href="" class="button-facebook">
+                        <i class="social-icon fa fa-facebook"></i>
+                    </a>
+                    <a href="" class="button-twitter">
+                        <i class="social-icon fa fa-twitter"></i>
+                    </a>
+                    <a href="" class="button-google">
+                        <i class="social-icon fa fa-google-plus"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="loginbox-or">
+                <div class="or-line"></div>
+                <div class="or">OR</div>
+            </div>
+           
+            <div class="loginbox-textbox">
+                <input type="text" placeholder=" Email" formControlName="email"class="form-control" >
+                <div *ngIf="objloginform.controls['email'].touched">
+                    <div *ngIf="objloginform.controls['email']?.errors?.['required']" class="error">Email is required
+                    </div>
+                    <div *ngIf="objloginform.controls['email']?.errors?.['maxlength']" class="error">Maximum 10
+                        characters are allowed</div>
+                    <div *ngIf="objloginform.controls['email']?.errors?.['pattern']" class="error">val</div>
+                </div>
+
+            </div><br>
+        
+        <div class="loginbox-textbox">
+            <input type="password" placeholder="Password" formControlName="password"class="form-control" >
+            <div *ngIf="objloginform.controls['password'].touched">
+                <div *ngIf="objloginform.controls['password']?.errors?.['required']" class="error">Password is
+                    required</div>
+                <div *ngIf="objloginform.controls['password']?.errors?.['minlength']" class="error">Minimum 8
+                    characters are required</div>
+                <div *ngIf="objloginform.controls['password']?.errors?.['pattern']" class="error">Enter valid data
+                </div>
+            </div>
+
+        </div><br>
+            <div class="loginbox-forgot">
+                <a href="">Forgot Password?</a>
+            </div>
+            <div class="loginbox-submit">
+                <input type="button" class="btn btn-primary btn-block" value="Login"(click)="login()">
+            </div>
+            <div class="loginbox-signup">
+                <a href="#register.html">Sign Up With Email</a>
+            </div>
+        </div>
+        <div class="logobox">
+        </div>
+    </div>
+</form>

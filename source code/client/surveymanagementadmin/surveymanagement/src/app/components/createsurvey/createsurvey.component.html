@@ -1,0 +1,163 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <style>
+        /* Styling the Body element i.e. Color,
+        Font, Alignment */
+        body {
+            background-color: white;
+            font-family: Verdana;
+            text-align: center;
+        }
+
+        /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: #fff;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        /* Styling form-control Label */
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Styling form-control input,
+        select, textarea */
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+
+        /* Styling form-control Radio
+        button and Checkbox */
+        .form-control input[type="radio"],
+        .form-control input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+        }
+
+        /* Styling Button */
+        button {
+            background-color: #1a82f9;
+
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Create Form -->
+    <form id="form" [formGroup]="surveyForm" (ngSubmit)="onSubmit()">
+
+        <!-- Details -->
+        <div class="form-control">
+            <label for="surveyName" id="label-name">
+                Surveyname
+            </label>
+
+            <!-- Input Type Text -->
+            <input type="text" id="surveyName" placeholder="Enter your Survey name" formControlName="surveyName" />
+        </div>
+
+        <!-- Details -->
+        <div class="form-control">
+            <label for="description" id="label-name">
+                Survey Description
+            </label>
+
+            <!-- Input Type Text -->
+            <textarea name="description" id="comment" placeholder="Enter your survey description"
+                formControlName="description">
+            </textarea>
+        </div>
+        <div class="form-control">
+            <label for="startDate" id="label-name">
+                Survey Start Date </label>
+
+            <input type="date" id="startDate" placeholder="Enter Start date" formControlName="startDate" />
+        </div>
+
+        <div class="form-control">
+            <label for="endDate" id="label-name">
+                Survey End Date </label>
+
+            <input type="date" id="endDate" placeholder="Enter End date" formControlName="endDate" />
+        </div>
+        <div class="form-control" formArrayName="questions" *ngFor="let question of questions.controls; let i = index">
+            <ng-container [formGroupName]="i">
+                <label for="question" id="label-name">
+                    Enter Question
+                </label>
+                <textarea name="Question" id="comment" placeholder="Enter your Question" formControlName="question"
+                    formControlName="question">
+            </textarea>
+                <label for="questionType" id="label-name">
+                    Enter questionType
+                </label>
+                <input name="qestionType" id="comment" placeholder="Enter your questionType" formControlName="questionType"
+                    formControlName="questionType">
+            </ng-container>
+            <input type="button" (click)="addQuestion()" value="Add">
+            <!-- <input type="button" (click)="deleteQuestion(i)"value ="delete"> -->
+        </div>
+        <input type="button" (click)="addQuestion()" value="Add">
+        <input type="button" (click)="deleteQuestion(1)" value="delete">
+        <!--   
+        <div class="form-control">
+            <label for="role" id="label-role">
+                Which option best describes you?
+            </label>
+             
+        Dropdown options -->
+        <!-- <select name="role" id="role">
+                <option value="student">Student</option>
+                <option value="intern">Intern</option>
+                <option value="professional">
+                    Professional
+                </option>
+                <option value="other">Other</option>
+            </select>
+        </div>  -->
+
+
+
+        <!-- Multi-line Text Input Control -->
+        <button type="submit" class="w3-button w3-theme"><i></i> Post</button>
+    </form>
+</body>
+
+</html>

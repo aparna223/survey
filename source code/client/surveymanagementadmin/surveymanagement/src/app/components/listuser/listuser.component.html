@@ -1,0 +1,54 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<div class="container">
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-uppercase mb-0">Manage Users</h5>
+            </div>
+            <div class="table-responsive">
+                <table class="table no-wrap user-table mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="border-0 text-uppercase font-medium pl-4">User Id</th>
+                      <th scope="col" class="border-0 text-uppercase font-medium">First Name</th>
+                      <th scope="col" class="border-0 text-uppercase font-medium">Last Name</th>
+                      <th scope="col" class="border-0 text-uppercase font-medium">Email</th>
+                      <th scope="col" class="border-0 text-uppercase font-medium">Status</th>
+                      <th scope="col" class="border-0 text-uppercase font-medium">Dob</th>
+                      <th scope="col" class="border-0 text-uppercase font-medium">Gender</th>
+                      <th scope="col" class="border-0 text-uppercase font-medium">Country</th>
+                      <th scope="col" class="border-0 text-uppercase font-medium">Profile</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let v of user">
+                      <!-- <td class="pl-4"></td> -->
+                      <td>{{v.userId}}</td>
+                      <td>{{v.first_name}}</td>
+                      <td>{{v.last_name}}</td>
+                      <td>{{v.email}}</td>
+                      <td>{{v.status}}</td>
+                      <td>{{v.dob}}</td>
+                      <td>{{v.gender}}</td>
+                      <td>{{v.country.countryName}}</td>
+                      <td>{{v.profile}}</td>
+                      
+                      <td>
+                        <select class="form-control category-select" id="exampleFormControlSelect1">
+                          <option>Block</option>
+                          <option>Unblock</option>
+                       </select>
+                      </td>
+                      <td>
+                      <button type="button" (click)="deleteItem(v.userId)"class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa fa-trash"></i> </button>
+                       </td> </tr>
+                 </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
